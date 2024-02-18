@@ -1,5 +1,5 @@
 require("dotenv").config();
-const cors = require("cors");
+
 const colors = require("colors");
 const express = require("express");
 
@@ -17,7 +17,6 @@ const app = express();
 const port = process.env.PORT || 4000; //Port number
 
 //middleware
-app.use(cors());
 app.use(express.json());
 app.use((req, res, next) => {
   console.log(req.path, req.method);
