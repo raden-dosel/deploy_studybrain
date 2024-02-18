@@ -1,5 +1,5 @@
 require("dotenv").config();
-const cors = require("cors");
+
 const colors = require("colors");
 const express = require("express");
 
@@ -10,7 +10,6 @@ const connectDB = require("./config/db");
 const { errorHandler } = require("./middleware/errorHandler");
 
 //connect to database
-connectDB();
 
 //express app
 const app = express();
