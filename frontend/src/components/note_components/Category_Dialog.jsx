@@ -18,9 +18,12 @@ function Category_Dialog({ onClose, note }) {
   };
 
   const Handle_Delete = async () => {
-    const response = await fetch("/api/notes/" + note._id, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/notes/" + note._id,
+      {
+        method: "DELETE",
+      }
+    );
 
     const jsonResponse = await response.json();
     console.log("Delete response:", jsonResponse);

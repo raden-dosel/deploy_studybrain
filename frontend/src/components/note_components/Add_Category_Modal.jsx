@@ -31,13 +31,16 @@ const Add_Category_Modal = ({ onClose }) => {
 
     console.log(newNotes);
 
-    const response = await fetch("/api/notes", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newNotes),
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/notes",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newNotes),
+      }
+    );
 
     console.log(JSON.stringify(newNotes));
 

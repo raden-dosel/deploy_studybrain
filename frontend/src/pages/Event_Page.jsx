@@ -58,7 +58,9 @@ function Event_Page() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch("/api/events");
+        const response = await fetch(
+          "https://studybrain-backend.onrender.com/events"
+        );
         const jsonResponse = await response.json();
 
         console.log(jsonResponse); // Log the API response

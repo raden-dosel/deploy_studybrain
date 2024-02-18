@@ -25,9 +25,12 @@ const Completed_Todo_Item = ({ todo }) => {
   };
 
   const Handle_Delete = async () => {
-    const response = await fetch("/api/todos/" + todo._id, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/todos/" + todo._id,
+      {
+        method: "DELETE",
+      }
+    );
 
     const jsonResponse = await response.json();
     console.log("Delete response:", jsonResponse);
@@ -39,13 +42,16 @@ const Completed_Todo_Item = ({ todo }) => {
   };
 
   const Handle_IsCompleted = async () => {
-    const response = await fetch("/api/todos/" + todo._id, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ isCompleted: !todo.isCompleted }),
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/todos/" + todo._id,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ isCompleted: !todo.isCompleted }),
+      }
+    );
 
     const jsonResponse = await response.json();
     console.log("Update response:", jsonResponse);

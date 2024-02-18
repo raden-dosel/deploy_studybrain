@@ -13,7 +13,9 @@ function Progress_Page() {
     // Fetch todos on mount
     const fetchTodos = async () => {
       try {
-        const response = await fetch("/api/todos");
+        const response = await fetch(
+          "https://studybrain-backend.onrender.com/todos"
+        );
         const data = await response.json();
 
         if (response.ok) {

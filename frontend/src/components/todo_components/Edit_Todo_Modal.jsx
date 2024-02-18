@@ -31,13 +31,16 @@ const Edit_Todo_Modal = ({ todo, onClose }) => {
 
     console.log(newTodo);
 
-    const response = await fetch("/api/todos/" + todo._id, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...newTodo }),
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/todos/" + todo._id,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...newTodo }),
+      }
+    );
 
     const jsonResponse = await response.json();
 

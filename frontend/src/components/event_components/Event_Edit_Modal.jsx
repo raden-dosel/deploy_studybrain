@@ -36,13 +36,16 @@ const Event_Edit_Modal = ({ event, onClose }) => {
 
     console.log(newEvent);
 
-    const response = await fetch("/api/events/" + event.id, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...newEvent }),
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/events/" + event.id,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...newEvent }),
+      }
+    );
 
     const jsonResponse = await response.json();
 

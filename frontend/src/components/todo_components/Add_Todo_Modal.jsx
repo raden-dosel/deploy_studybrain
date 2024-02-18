@@ -31,13 +31,16 @@ const Add_Todo_Modal = ({ closeModal }) => {
 
     console.log(newTodo);
 
-    const response = await fetch("/api/todos", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTodo),
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/todos",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTodo),
+      }
+    );
 
     const jsonResponse = await response.json();
 

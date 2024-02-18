@@ -36,13 +36,16 @@ const Event_Form = ({ onClose }) => {
 
     console.log(newEvent);
 
-    const response = await fetch("/api/events", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newEvent),
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/events",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newEvent),
+      }
+    );
 
     console.log(JSON.stringify(newEvent));
 

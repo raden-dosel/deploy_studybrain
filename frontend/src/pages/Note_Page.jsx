@@ -12,7 +12,9 @@ function Note_Page() {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await fetch("/api/notes");
+        const response = await fetch(
+          "https://studybrain-backend.onrender.com/notes"
+        );
         const jsonResponse = await response.json();
 
         console.log("Notes:", jsonResponse); // Log the API response

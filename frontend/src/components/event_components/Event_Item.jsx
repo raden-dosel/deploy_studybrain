@@ -19,9 +19,12 @@ const Event_Item = ({ event }) => {
   };
 
   const Handle_Delete = async () => {
-    const response = await fetch("/api/events/" + event._id, {
-      method: "DELETE",
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/events/" + event._id,
+      {
+        method: "DELETE",
+      }
+    );
 
     const jsonResponse = await response.json();
     console.log("Delete response:", jsonResponse);
@@ -33,13 +36,16 @@ const Event_Item = ({ event }) => {
   };
 
   const Handle_IsDone = async () => {
-    const response = await fetch("/api/events/" + event._id, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ isDone: !event.isDone }),
-    });
+    const response = await fetch(
+      "https://studybrain-backend.onrender.com/events/" + event._id,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ isDone: !event.isDone }),
+      }
+    );
 
     const jsonResponse = await response.json();
     console.log("Update response:", jsonResponse);
