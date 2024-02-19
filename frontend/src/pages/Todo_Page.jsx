@@ -36,9 +36,7 @@ function Todo_Page() {
     };
 
     fetchTodos();
-  }, [dispatch]);
-
-  console.log("Todos", todos);
+  }, [dispatch, todos]);
 
   const openModal = () => {
     setIsModalOpen(true);
