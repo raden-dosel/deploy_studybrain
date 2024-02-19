@@ -19,7 +19,7 @@ const Event_Details_Modal = ({ event, onClose }) => {
 
   const Handle_Delete = async () => {
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/events/" + event.id,
+      "https://studybrain-backend.onrender.com/api/events/" + event.id,
       {
         method: "DELETE",
       }
@@ -37,7 +37,7 @@ const Event_Details_Modal = ({ event, onClose }) => {
 
   const Handle_IsDone = async () => {
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/events/" + event._d,
+      "https://studybrain-backend.onrender.com/api/events/" + event.id,
       {
         method: "PATCH",
         headers: {

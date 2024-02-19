@@ -32,7 +32,7 @@ const Edit_Note_Modal = ({ onClose, note }) => {
     console.log(newNote);
 
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/notes/" + note._id,
+      "https://studybrain-backend.onrender.com/api/notes/" + note._id,
       {
         method: "PATCH",
         headers: {

@@ -13,7 +13,7 @@ function Note_Page() {
     const fetchNotes = async () => {
       try {
         const response = await fetch(
-          "https://studybrain-backend.onrender.com/notes"
+          "https://studybrain-backend.onrender.com/api/notes"
         );
         const jsonResponse = await response.json();
 

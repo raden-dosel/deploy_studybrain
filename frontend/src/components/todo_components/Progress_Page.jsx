@@ -14,7 +14,7 @@ function Progress_Page() {
     const fetchTodos = async () => {
       try {
         const response = await fetch(
-          "https://studybrain-backend.onrender.com/todos"
+          "https://studybrain-backend.onrender.com/api/todos"
         );
         const data = await response.json();
 

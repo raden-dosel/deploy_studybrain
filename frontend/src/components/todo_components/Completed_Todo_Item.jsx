@@ -26,7 +26,7 @@ const Completed_Todo_Item = ({ todo }) => {
 
   const Handle_Delete = async () => {
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/todos/" + todo._id,
+      "https://studybrain-backend.onrender.com/api/todos/" + todo._id,
       {
         method: "DELETE",
       }
@@ -43,7 +43,7 @@ const Completed_Todo_Item = ({ todo }) => {
 
   const Handle_IsCompleted = async () => {
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/todos/" + todo._id,
+      "https://studybrain-backend.onrender.com/api/todos/" + todo._id,
       {
         method: "PATCH",
         headers: {

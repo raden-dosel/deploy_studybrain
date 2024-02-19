@@ -59,7 +59,7 @@ function Event_Page() {
     const fetchEvents = async () => {
       try {
         const response = await fetch(
-          "https://studybrain-backend.onrender.com/events"
+          "https://studybrain-backend.onrender.com/api/events"
         );
         const jsonResponse = await response.json();
 

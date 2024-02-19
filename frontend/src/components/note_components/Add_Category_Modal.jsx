@@ -32,7 +32,7 @@ const Add_Category_Modal = ({ onClose }) => {
     console.log(newNotes);
 
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/notes",
+      "https://studybrain-backend.onrender.com/api/notes",
       {
         method: "POST",
         headers: {

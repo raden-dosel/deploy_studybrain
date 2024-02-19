@@ -20,7 +20,7 @@ const Event_Item = ({ event }) => {
 
   const Handle_Delete = async () => {
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/events/" + event._id,
+      "https://studybrain-backend.onrender.com/api/events/" + event._id,
       {
         method: "DELETE",
       }
@@ -37,7 +37,7 @@ const Event_Item = ({ event }) => {
 
   const Handle_IsDone = async () => {
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/events/" + event._id,
+      "https://studybrain-backend.onrender.com/api/events/" + event._id,
       {
         method: "PATCH",
         headers: {

@@ -32,7 +32,7 @@ const Edit_Todo_Modal = ({ todo, onClose }) => {
     console.log(newTodo);
 
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/todos/" + todo._id,
+      "https://studybrain-backend.onrender.com/api/todos/" + todo._id,
       {
         method: "PATCH",
         headers: {

@@ -37,7 +37,7 @@ const Event_Form = ({ onClose }) => {
     console.log(newEvent);
 
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/events",
+      "https://studybrain-backend.onrender.com/api/events",
       {
         method: "POST",
         headers: {

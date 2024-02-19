@@ -32,7 +32,7 @@ const Add_Todo_Modal = ({ closeModal }) => {
     console.log(newTodo);
 
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/todos",
+      "https://studybrain-backend.onrender.com/api/todos",
       {
         method: "POST",
         headers: {
