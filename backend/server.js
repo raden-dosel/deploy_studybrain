@@ -9,8 +9,7 @@ const noteRoutes = require("./routes/note_Routes");
 const connectDB = require("./config/db");
 const { errorHandler } = require("./middleware/errorHandler");
 
-const allowedOrigin =
-  "https://deploy-studybrain-frontend-qjrrk4oj7-raden-dosels-projects.vercel.app";
+const allowedOrigin = "https://deploy-studybrain-frontend.vercel.app/";
 
 const corsOptions = {
   origin: allowedOrigin,
