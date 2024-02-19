@@ -34,15 +34,6 @@ app.use((req, res, next) => {
 app.use(errorHandler);
 app.use(cors(corsOptions));
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
 //routes
 app.use("/api/todos", todoRoutes);
 app.use("/api/events", eventRoutes);
