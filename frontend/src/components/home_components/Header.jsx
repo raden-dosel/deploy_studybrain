@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Logo from "../Logo";
+import { Link } from "react-router-dom";
 function Header() {
   const [nav, setNav] = useState(false);
 
@@ -9,14 +10,33 @@ function Header() {
   };
 
   return (
-    <div className="flex justify-between items-center mt-4 max-w-[1240px] mx-auto px-4 text-darkpurple">
-      <Logo />
-      <ul className="hidden md:flex">
-        <li className="p-4">Home</li>
-        <li className="p-4">Company</li>
-        <li className="p-4">Resource</li>
-        <li className="p-4">About</li>
-        <li className="p-4">Contact</li>
+    <div className="flex justify-between items-center mt-4 max-w-[1240px] mx-auto px-4 text-darkpurple bg-indigodye rounded-xl shadow-md">
+      <div className="flex lg:w-full md:w-44 w-32 mx-2 md:mx-4">
+        <Logo />
+      </div>
+
+      <ul className=" space-x-4 font-semibold text-platinum hidden md:flex">
+        <Link to="/" className="no-underline">
+          <li className="p-4 hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md ">
+            Home
+          </li>
+        </Link>
+        <Link to="/note" className="no-underline">
+          <li className="p-4 hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+            Library
+          </li>
+        </Link>
+
+        <Link to="/event" className="no-underline">
+          <li className="p-4 hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+            Events
+          </li>
+        </Link>
+        <Link to="/todo" className="no-underline">
+          <li className="p-4 hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+            Goals
+          </li>
+        </Link>
       </ul>
       <div onClick={handleNav} className="block md:hidden">
         {!nav ? <AiOutlineMenu size={20} /> : <AiOutlineClose size={20} />}
@@ -32,12 +52,27 @@ function Header() {
         <div className="ml-4">
           <Logo />
         </div>
-        <ul className="p-4 text-sm uppercase">
-          <li className="p-4 border-b border-frenchgray">Home</li>
-          <li className="p-4 border-b border-frenchgray">Company</li>
-          <li className="p-4 border-b border-frenchgray">Resource</li>
-          <li className="p-4 border-b border-frenchgray">About</li>
-          <li className="p-4">Contact</li>
+        <ul className="p-4 text-sm uppercase font-semibold text-platinum">
+          <Link to="/" className="no-underline">
+            <li className="p-4 border-b border-frenchgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+              Home
+            </li>
+          </Link>
+          <Link to="/note" className="no-underline ">
+            <li className="p-4 border-b border-frenchgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+              Library
+            </li>
+          </Link>
+          <Link to="/event" className="no-underline">
+            <li className="p-4 border-b border-frenchgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+              Events
+            </li>
+          </Link>
+          <Link to="/todo" className="no-underline">
+            <li className="p-4  hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+              Goals
+            </li>
+          </Link>
         </ul>
       </div>
     </div>
