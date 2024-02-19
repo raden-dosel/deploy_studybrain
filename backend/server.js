@@ -10,7 +10,8 @@ const connectDB = require("./config/db");
 const { errorHandler } = require("./middleware/errorHandler");
 
 const allowedOrigin =
-  "https://deploy-studybrain-frontend-7vcmvt0x8-raden-dosels-projects.vercel.app";
+  "https://deploy-studybrain-frontend-qjrrk4oj7-raden-dosels-projects.vercel.app";
+
 const corsOptions = {
   origin: allowedOrigin,
   methods: ["GET", "POST", "PATCH", "DELETE"],
@@ -23,7 +24,6 @@ connectDB();
 //express app
 const app = express();
 const port = process.env.PORT || 4000; //Port number
-app.use(cors());
 
 //middleware
 app.use(express.json());
@@ -44,9 +44,9 @@ app.use((req, res, next) => {
 });
 
 //routes
-app.use("https://studybrain-backend.onrender.com/todos", todoRoutes);
-app.use("https://studybrain-backend.onrender.com/events", eventRoutes);
-app.use("https://studybrain-backend.onrender.com/notes", noteRoutes);
+app.use("/api/todos", todoRoutes);
+app.use("/api/events", eventRoutes);
+app.use("/api/notes", noteRoutes);
 
 //listen for request
 app.listen(port, () => {
