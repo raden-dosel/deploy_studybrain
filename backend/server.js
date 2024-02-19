@@ -32,9 +32,9 @@ app.use(
 );
 
 //routes
-app.use("/api/todos", todoRoutes);
-app.use("/api/events", eventRoutes);
-app.use("/api/notes", noteRoutes);
+app.use("https://studybrain-backend.onrender.com/todos", todoRoutes);
+app.use("https://studybrain-backend.onrender.com/events", eventRoutes);
+app.use("https://studybrain-backend.onrender.com/notes", noteRoutes);
 
 //listen for request
 app.listen(port, () => {
