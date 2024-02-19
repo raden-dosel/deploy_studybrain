@@ -25,7 +25,9 @@ app.use((req, res, next) => {
 app.use(errorHandler);
 app.use(
   cors({
-    origin: ["https://deploy-studybrain-frontend.vercel.app"],
+    origin: [
+      "https://deploy-studybrain-frontend-7vcmvt0x8-raden-dosels-projects.vercel.app/",
+    ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true,
   })
