@@ -15,7 +15,9 @@ function Todo_Page() {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const response = await fetch("/api/todos");
+        const response = await fetch(
+          "https://studybrain-backend.onrender.com/todos"
+        );
         const jsonResponse = await response.json();
 
         console.log(jsonResponse); // Log the API response

@@ -26,12 +26,24 @@ app.use(errorHandler);
 app.use(
   cors({
     origin: [
-      "https://deploy-studybrain-frontend-7vcmvt0x8-raden-dosels-projects.vercel.app/",
+      "https://deploy-studybrain-frontend-7vcmvt0x8-raden-dosels-projects.vercel.app",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true,
   })
 );
+
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://deploy-studybrain-frontend-7vcmvt0x8-raden-dosels-projects.vercel.app"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 //routes
 app.use("https://studybrain-backend.onrender.com/todos", todoRoutes);
