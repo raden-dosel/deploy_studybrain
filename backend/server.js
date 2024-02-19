@@ -9,6 +9,14 @@ const noteRoutes = require("./routes/note_Routes");
 const connectDB = require("./config/db");
 const { errorHandler } = require("./middleware/errorHandler");
 
+const allowedOrigin =
+  "https://deploy-studybrain-frontend-7vcmvt0x8-raden-dosels-projects.vercel.app";
+const corsOptions = {
+  origin: allowedOrigin,
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  credentials: true,
+};
+
 //connect to database
 connectDB();
 
@@ -24,15 +32,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(errorHandler);
-app.use(
-  cors({
-    origin: [
-      "https://deploy-studybrain-frontend-7vcmvt0x8-raden-dosels-projects.vercel.app",
-    ],
-    methods: ["GET", "POST", "PATCH", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
   res.setHeader(
