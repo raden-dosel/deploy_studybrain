@@ -45,7 +45,7 @@ function Header() {
       <div
         className={
           nav
-            ? "fixed md:hidden left-0 top-0 py-4 min-w-[50%] h-full border-r border-r-platinum bg-lavender ease-in-out duration-500"
+            ? "fixed md:hidden left-0 top-0 py-4 min-w-[50%] h-full border-r border-r-platinum bg-indigodye ease-in-out duration-500"
             : "fixed left-[-100%] ease-in-out duration-500"
         }
       >
@@ -54,22 +54,22 @@ function Header() {
         </div>
         <ul className="p-4 text-sm uppercase font-semibold text-platinum">
           <Link to="/" className="no-underline">
-            <li className="p-4 border-b border-frenchgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+            <li className="p-4 border-b border-cadetgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
               Home
             </li>
           </Link>
           <Link to="/note" className="no-underline ">
-            <li className="p-4 border-b border-frenchgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+            <li className="p-4 border-b border-cadetgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
               Library
             </li>
           </Link>
           <Link to="/event" className="no-underline">
-            <li className="p-4 border-b border-frenchgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+            <li className="p-4 border-b border-cadetgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
               Events
             </li>
           </Link>
           <Link to="/todo" className="no-underline">
-            <li className="p-4  hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
+            <li className="p-4 border-b border-cadetgray hover:cursor-pointer hover:scale-[1.10] duration-150 hover:shadow-md">
               Goals
             </li>
           </Link>
