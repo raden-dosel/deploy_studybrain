@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const colors = require("colors");
 const express = require("express");
-
+const cors = require("cors");
 const todoRoutes = require("./routes/todo_Routes");
 const eventRoutes = require("./routes/event_Routes");
 const noteRoutes = require("./routes/note_Routes");
@@ -23,6 +23,13 @@ app.use((req, res, next) => {
   next();
 });
 app.use(errorHandler);
+app.use(
+  cors({
+    origin: ["https://deploy-studybrain-frontend.vercel.app"],
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    credentials: true,
+  })
+);
 
 //routes
 app.use("/api/todos", todoRoutes);
