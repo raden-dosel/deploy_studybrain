@@ -20,7 +20,7 @@ function Category_Card({ note }) {
       >
         <div className="p-4">
           <h2 className="text-2xl font-semibold text-darkpurple">
-            {note.title}
+            {note.category}
           </h2>
         </div>
       </div>
