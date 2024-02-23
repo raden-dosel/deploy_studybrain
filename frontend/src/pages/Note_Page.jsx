@@ -62,7 +62,7 @@ function Note_Page() {
                   notes.category.length > 0 &&
                   notes.category.map((note) => (
                     <Category_Card key={note._id} note={note} />
-                  ))}
+                  )))}
 
                 {notes && notes.length === 0 && <p>No notes found.</p>}
               </div>
