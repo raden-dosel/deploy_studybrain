@@ -21,8 +21,6 @@ function Category_Card({ note }) {
         <div className="p-4">
           <h2 className="text-2xl font-semibold text-darkpurple">
            {note.title}
-            
-            
           </h2>
           <h2 className="text-md font-semibold text-cadetgray">
           {note.category}
