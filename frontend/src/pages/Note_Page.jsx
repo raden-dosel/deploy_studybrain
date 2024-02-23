@@ -42,7 +42,7 @@ function Note_Page() {
     setShowModal(true);
   };
 
-  return 
+  return (
     <>
       <div>
         <Main_Header />
@@ -55,7 +55,6 @@ function Note_Page() {
               <div onClick={handleModalOpen} className="mx-4">
                 <Add_Card />
               </div>
-              <div className=" flex flex-row gap-4">
               <div className=" flex flex-row gap-4">
                 {notes &&
                   notes.length > 0 &&
@@ -71,7 +70,7 @@ function Note_Page() {
       </div>
       {showModal && <Add_Category_Modal onClose={handleModalClose} />}
     </>
-  
+  );
 }
 
 export default Note_Page;
