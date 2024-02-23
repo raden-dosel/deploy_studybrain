@@ -56,9 +56,11 @@ function Note_Page() {
                 <Add_Card />
               </div>
               <div className=" flex flex-row gap-4">
-                {notes &&
+               {notes &&
                   notes.length > 0 &&
-                  notes.title.map((note) => (
+                  notes.map((note) => (
+                  notes.category.length > 0 &&
+                  notes.category.map((note) => (
                     <Category_Card key={note._id} note={note} />
                   ))}
 
