@@ -50,27 +50,19 @@ function Note_Page() {
           <div className="mx-auto my-4 h-auto flex justify-between items-center">
             <h1 className="text-4xl font-bold text-darkpurple">Note Taking</h1>
           </div>
-          <div className="flex flex-col">
-            <h2 className="text-2xl font-semibold text-darkpurple my-2">
-              Categories
-            </h2>
-            <div className="bg-offwhite shadow rounded-md lg:max-h-[400px] ">
-              <div className="p-4 mx-auto flex flex-row items-center">
-                <div className="sticky top-0">
-                  <div onClick={handleModalOpen} className="mx-4 center">
-                    <Add_Card />
-                  </div>
-                </div>
-                <div className="flex flex-row gap-4 overflow-x-auto scrollbar">
-                  {categories &&
-                    categories.length > 0 &&
-                    categories.map((category) => (
-                      <Category_Card key={category._id} category={category} />
-                    ))}
-                  {categories && categories.length === 0 && (
-                    <p>No notes found.</p>
-                  )}
-                </div>
+          <div className="bg-offwhite shadow rounded-md lg:min-h-[400px] ">
+            <div className="p-4 mx-auto flex flex-row items-center overflow-x-auto pt-[90px]">
+              <div onClick={handleModalOpen} className="mx-4">
+                <Add_Card />
+              </div>
+              <div className=" flex flex-row gap-4">
+                {notes &&
+                  notes.category.value.length > 0 &&
+                  notes.category.map((note) => (
+                    <Category_Card key={note._id} note={note} />
+                  ))}
+
+                {notes && notes.length === 0 && <p>No notes found.</p>}
               </div>
             </div>
           </div>
