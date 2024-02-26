@@ -46,7 +46,7 @@ const Add_Note_Modal = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!category.trim()) {
+    if (!title.trim() || !content.trim() || !category) {
       toast.error("Please fill in all the required fields");
       return;
     }
