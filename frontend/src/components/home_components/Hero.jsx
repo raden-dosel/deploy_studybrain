@@ -34,7 +34,7 @@ function Hero() {
               result to productivity and an academic achievement.
             </p>
           </div>
-          <Link to="/todo" className="no-underline">
+          <Link to="/login" className="no-underline">
             <button className="bg-indigodye w-[175px] rounded-md font-medium ml-4 my-6 py-2 px-3 text-white active:scale-[.98] active:duration-75 transition-all hover:scale-[1.05] ease-in-out">
               Get started
             </button>
