@@ -51,6 +51,11 @@ const Add_Note_Modal = ({ onClose }) => {
       return;
     }
 
+    if (title.length > 16) {
+      toast.error("Maximum title length is 16 characters");
+      return;
+    }
+
     const newNote = {
       title,
       content,

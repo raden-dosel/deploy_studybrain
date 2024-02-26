@@ -26,6 +26,11 @@ const Event_Form = ({ onClose }) => {
       return;
     }
 
+    if (title.length > 16) {
+      toast.error("Maximum title length is 16 characters");
+      return;
+    }
+
     const newEvent = {
       title,
       description,

@@ -26,6 +26,11 @@ const Event_Edit_Modal = ({ event, onClose }) => {
       return;
     }
 
+    if (title.length > 16) {
+      toast.error("Maximum title length is 16 characters");
+      return;
+    }
+
     const newEvent = {
       title,
       description,

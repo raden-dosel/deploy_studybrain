@@ -22,6 +22,11 @@ const Edit_Category_Modal = ({ onClose, category }) => {
       return;
     }
 
+    if (name.length > 16) {
+      toast.error("Maximum name length is 16 characters");
+      return;
+    }
+
     const newCategory = {
       name,
     };

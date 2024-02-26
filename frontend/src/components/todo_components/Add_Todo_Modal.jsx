@@ -22,6 +22,11 @@ const Add_Todo_Modal = ({ closeModal }) => {
       return;
     }
 
+    if (title.length > 16) {
+      toast.error("Maximum title length is 16 characters");
+      return;
+    }
+
     const newTodo = {
       title,
       description,

@@ -22,6 +22,11 @@ const Edit_Todo_Modal = ({ todo, onClose }) => {
       return;
     }
 
+    if (title.length > 16) {
+      toast.error("Maximum title length is 16 characters");
+      return;
+    }
+
     const newTodo = {
       title,
       description,
