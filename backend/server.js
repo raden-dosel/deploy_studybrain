@@ -33,7 +33,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(errorHandler);
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 //routes
 app.use("/api/todos", todoRoutes);
