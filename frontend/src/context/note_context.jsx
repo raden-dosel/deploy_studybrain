@@ -12,13 +12,13 @@ export const noteReducer = (state, action) => {
       };
     case "CREATE_NOTE":
       return {
-        notes: [action.payload, ...state.events],
+        notes: [action.payload, ...state.notes],
       };
     case "DELETE_NOTES":
       console.log("Deleting note with ID:", action.payload);
       console.log("Current state before deletion:", state);
 
-      const updatedNotes = state.events.filter(
+      const updatedNotes = state.notes.filter(
         (note) => note._id !== action.payload
       );
 
@@ -45,7 +45,7 @@ export const noteReducer = (state, action) => {
       };
 
     case "UPDATE_NOTE_DATA":
-      console.log("Updating todo with ID:", action.payload.id);
+      console.log("Updating note with ID:", action.payload.id);
 
       const updatedNotesData = state.notes.map((note) =>
         note._id === action.payload.id ? { ...note, ...action.payload } : note

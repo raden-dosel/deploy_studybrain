@@ -6,10 +6,12 @@ const cors = require("cors");
 const todoRoutes = require("./routes/todo_Routes");
 const eventRoutes = require("./routes/event_Routes");
 const noteRoutes = require("./routes/note_Routes");
+const searchNoteRoutes = require("./routes/search_Routes");
+const categoryRoutes = require("./routes/category_Routes");
 const connectDB = require("./config/db");
 const { errorHandler } = require("./middleware/errorHandler");
 
-const allowedOrigin = "https://deploy-studybrain-frontend.vercel.app";
+const allowedOrigin = "https://deploy-studybrain.vercel.app";
 
 const corsOptions = {
   origin: allowedOrigin,
@@ -31,12 +33,14 @@ app.use((req, res, next) => {
   next();
 });
 app.use(errorHandler);
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
 //routes
 app.use("/api/todos", todoRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/notes", noteRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/searchNotes", searchNoteRoutes);
 
 //listen for request
 app.listen(port, () => {

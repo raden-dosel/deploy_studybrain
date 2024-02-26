@@ -13,8 +13,7 @@ function Cards() {
             Write Notes
           </h2>
           <p className="text-center text-xl py-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente,
-            consequuntur.
+            Taking notes is like casting a net for fleeting thoughts and ideas.
           </p>
           <button className="bg-slateblue lg:w-[175px] md:w-[120px] lg:h-[48px] md:h-[72px] rounded-md font-medium mx-auto my-6 py-3 px-6 text-white active:scale-[.98] active:duration-75 transition-all hover:scale-[1.05] ease-in-out">
             Start Studying
@@ -28,11 +27,10 @@ function Cards() {
             alt="/"
           />
           <h2 className="text-2xl font-bold text-center border-b border-frenchgray py-8">
-            Write Notes
+            Schedule Events
           </h2>
           <p className="text-center text-xl py-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente,
-            consequuntur.
+            Scheduling events helps you organize your time effectively.
           </p>
           <button className="bg-slateblue lg:w-[175px] md:w-[120px] lg:h-[48px] md:h-[72px] rounded-md font-medium mx-auto my-6 py-3 px-6 text-white active:scale-[.98] active:duration-75 transition-all hover:scale-[1.05] ease-in-out">
             Manage Events
@@ -46,11 +44,10 @@ function Cards() {
             alt="/"
           />
           <h2 className="text-2xl font-bold text-center border-b border-frenchgray py-8">
-            Write Notes
+            Manage Task
           </h2>
           <p className="text-center text-xl py-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente,
-            consequuntur.
+            Managing tasks requires adjusting your plan as needed.
           </p>
           <button className="bg-slateblue lg:w-[175px] md:w-[120px] lg:h-[48px] md:h-[72px] rounded-md font-medium mx-auto my-6 py-3 px-6 text-white active:scale-[.98] active:duration-75 transition-all hover:scale-[1.05] ease-in-out">
             Set Goals
@@ -64,11 +61,10 @@ function Cards() {
             alt="/"
           />
           <h2 className="text-2xl font-bold text-center border-b border-frenchgray py-8">
-            Write Notes
+            Track Tasks
           </h2>
           <p className="text-center text-xl py-4">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente,
-            consequuntur.
+            Tracking tasks can also boost your productivity and motivation.
           </p>
           <button className="bg-slateblue lg:w-[175px] md:w-[120px]  lg:h-[48px] md:h-[72px] rounded-md font-medium mx-auto my-6 py-3 px-6 text-white active:scale-[.98] active:duration-75 transition-all hover:scale-[1.05] ease-in-out">
             Track Progress

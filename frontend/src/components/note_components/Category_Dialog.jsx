@@ -51,9 +51,9 @@ function Category_Dialog({ onClose, note }) {
           </div>
 
           <div className="flex flex-col justify-center items-start p-4 rounded-md">
-            <p className="text-xl font-bold mb-2">Title: {note.title}</p>
+            <p className="text-4xl font-bold mb-2">Title: {note.title}</p>
             <div className="flex flex-col">
-              <p className="text-md font-semibold mb-2">Content:</p>
+              <p className="text-2xl font-semibold mb-2">Content:</p>
               <div className="flex ">
                 <div className="h-[400px] w-[1220px] bg-white p-4 rounded-lg shadow">
                   <p className="text-md font-semibold mb-2">{note.content}</p>
@@ -61,9 +61,11 @@ function Category_Dialog({ onClose, note }) {
               </div>
             </div>
 
-            <p className="text-md font-semibold my-2">Type: {note.category}</p>
+            <p className="text-xl font-semibold my-2">
+              Type: {note.category.name}
+            </p>
 
-            <div className="mt-4 p-6 bg-lavender shadow rounded-lg w-[1220px]">
+            <div className="mt-2 p-6 bg-lavender shadow rounded-lg w-[1220px]">
               <div className="flex flex-row justify-evenly">
                 <button className="text-darkpurple active:scale-[.98] active:duration-75 transition-all hover:scale-[1.05] ease-in-out">
                   <FaEdit onClick={openEditModal} className="size-5" />

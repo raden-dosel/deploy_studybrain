@@ -10,12 +10,12 @@ import { Use_Category_Context } from "../../hooks/use_Categories_Context";
 import { FaCalendar, FaTimes } from "react-icons/fa";
 import TodoType from "../../core/values/todoType";
 
-const Edit_Note_Modal = ({ onClose, note }) => {
+const Add_Note_Modal = ({ onClose }) => {
   const { dispatch } = Use_Notes_Context();
   const { categories } = Use_Category_Context();
-  const [title, setTitle] = useState(note.title);
-  const [content, setContent] = useState(note.content);
-  const [category, setCategory] = useState(note.category);
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [category, setCategory] = useState(null);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -60,9 +60,9 @@ const Edit_Note_Modal = ({ onClose, note }) => {
     console.log(newNote);
 
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/api/notes/" + note._id,
+      "https://studybrain-backend.onrender.com/api/notes",
       {
-        method: "PATCH",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -79,17 +79,16 @@ const Edit_Note_Modal = ({ onClose, note }) => {
       // Add the new todo to the list of events
       // setTodos([...todos, jsonResponse.event]);
       // Reset the form
-      toast.success("Note updated successfully");
+      toast.success("Note added successfully");
       setTitle("");
-      setCategory(null);
+      setCategory("");
       setContent("");
 
       // Close the modal
       dispatch({
-        type: "UPDATE_NOTE_DATA",
+        type: "CREATE_NOTE",
         payload: {
-          id: note._id,
-          ...newNote,
+          jsonResponse,
         },
       });
       onClose();
@@ -173,4 +172,4 @@ const Edit_Note_Modal = ({ onClose, note }) => {
   );
 };
 
-export default Edit_Note_Modal;
+export default Add_Note_Modal;

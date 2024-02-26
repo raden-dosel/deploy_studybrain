@@ -55,6 +55,13 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.sticky {
+  position: sticky;
+  top: 0; /* Adjust as needed */
+  width: -moz-fit-content; /* Optional: Prevent stretching */
+  width: fit-content;
+}
+
 .react-calendar {
   width: 600px;
   height: 330px;

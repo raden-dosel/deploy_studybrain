@@ -11,7 +11,7 @@ const Add_Todo_Modal = ({ closeModal }) => {
   const { dispatch } = Use_Todos_Context();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [type, setType] = useState("");
+  const [type, setType] = useState(TodoType.PERSONAL);
   const [isCompleted, setIsCompleted] = useState(false);
 
   const handleSubmit = async (e) => {

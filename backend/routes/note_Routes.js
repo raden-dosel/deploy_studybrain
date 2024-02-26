@@ -3,6 +3,7 @@ const Note = require("../models/note_Model");
 const {
   create_Note,
   get_AllNotes,
+  get_AllNotesByCategory,
   get_SingleNote,
   delete_Note,
   update_Note,
@@ -15,6 +16,9 @@ router.get("/", get_AllNotes);
 
 //Get a single Todo
 router.get("/:id", get_SingleNote);
+
+//Get all Todos by category
+router.get("/category/:categoryId", get_AllNotesByCategory);
 
 //Post a new Todo
 router.post("/", create_Note);

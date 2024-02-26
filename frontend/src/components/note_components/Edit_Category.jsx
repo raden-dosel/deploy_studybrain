@@ -9,10 +9,10 @@ import { Use_Events_Context } from "../../hooks/use_Events_Context";
 import { FaCalendar, FaTimes } from "react-icons/fa";
 import TodoType from "../../core/values/todoType";
 
-const Add_Category_Modal = ({ onClose }) => {
+const Edit_Category_Modal = ({ onClose, category }) => {
   const { dispatch } = Use_Events_Context();
 
-  const [name, setSetname] = useState("");
+  const [name, setSetname] = useState(category.name);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +29,7 @@ const Add_Category_Modal = ({ onClose }) => {
     console.log(newCategory);
 
     const response = await fetch(
-      "https://studybrain-backend.onrender.com/api/categories",
+      "https://studybrain-backend.onrender.com/api/categories" + category._id,
       {
         method: "POST",
         headers: {
@@ -57,8 +57,11 @@ const Add_Category_Modal = ({ onClose }) => {
 
       // Close the modal
       dispatch({
-        type: "CREATE_NOTE_CATEGORY",
-        payload: jsonResponse.category,
+        type: "UPDATE_CATEGORY_DATA",
+        payload: {
+          id: category._id,
+          jsonResponse,
+        },
       });
       onClose();
     }
@@ -108,4 +111,4 @@ const Add_Category_Modal = ({ onClose }) => {
   );
 };
 
-export default Add_Category_Modal;
+export default Edit_Category_Modal;

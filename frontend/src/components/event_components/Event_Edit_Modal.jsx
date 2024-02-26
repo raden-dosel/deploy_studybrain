@@ -57,7 +57,7 @@ const Event_Edit_Modal = ({ event, onClose }) => {
       // Add the new todo to the list of todos
       // setTodos([...todos, jsonResponse.todo]);
       // Reset the form
-      toast.success("Todo updated successfully");
+      toast.success("Event updated successfully");
       dispatch({
         type: "UPDATE_EVENT_DATA",
         payload: {

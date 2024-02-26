@@ -1,33 +1,25 @@
 const mongoose = require("mongoose");
+const Category = require("../models/category_Model");
 
 const Schema = mongoose.Schema;
 
-const NoteCategory = {
-  PERSONAL: "Personal",
-  WORK: "Work",
-  SCHOOL: "School",
-  FUN: "Fun",
-  HEALTH: "Health",
-  OTHER: "Other",
-};
-
-const noteSchema = new Schema(
-  {
-    title: {
-      type: String,
-      trim: true,
-    },
-    content: {
-      type: String,
-      trim: true,
-    },
-    category: {
-      type: String,
-      enum: Object.values(NoteCategory),
-      required: true,
-    },
+const noteSchema = new Schema({
+  title: {
+    type: String,
+    trim: true,
   },
-  { timestamps: true }
-);
+  content: {
+    type: String,
+    trim: true,
+  },
+  category: {
+    type: Schema.Types.ObjectId, // Change the type to ObjectId
+    ref: "Category", // Reference to the "Category" model
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
 module.exports = mongoose.model("Note", noteSchema);
